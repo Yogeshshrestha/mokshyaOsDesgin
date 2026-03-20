@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Manrope', system-ui, sans-serif;
+    color: #FAF7E9;
+  }
+
+  body {
+    background-color: #0E665D;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .btn-coral {
+    @apply inline-flex items-center gap-2 bg-white text-teal-dark font-bold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg border-t-2 border-btn-border;
+    box-shadow: 0px 0px 0px 1.4px #f1f1f1, inset 0px -3px 0px 0px #10786D;
+  }
+
+  .btn-teal {
+    @apply inline-flex items-center gap-2 bg-white text-teal-dark font-bold px-6 py-3 rounded-full transition-all duration-300 hover:shadow-lg border-t-2 border-btn-border;
+    box-shadow: 0px 0px 0px 1.4px #f1f1f1, inset 0px -3px 0px 0px #10786D;
+  }
+
+  .btn-icon {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-20 xl:px-32;
+  }
+
+  .highlight-text {
+    @apply relative inline;
+    background: linear-gradient(180deg, transparent 60%, rgba(96, 186, 177, 0.2) 60%);
+  }
+
+  .glass-card {
+    @apply bg-glass backdrop-blur-[6px] border border-white/50 rounded-[20px] shadow-[0px_8px_30px_0px_rgba(0,0,0,0.04)];
+  }
+}
+
+@layer utilities {
+  .font-heading {
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  .font-form {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .text-gradient {
+    background: linear-gradient(180deg, #FFFFFF 22.18%, #D5D5D5 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-coral-gradient {
+    background: linear-gradient(135deg, #177F75, #0E665D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
