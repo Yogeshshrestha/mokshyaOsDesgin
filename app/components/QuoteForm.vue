@@ -81,10 +81,10 @@
 
           <div class="grid sm:grid-cols-2 gap-5">
             <div>
-              <label for="state" class="block text-cream/80 text-sm font-medium mb-1.5">State</label>
-              <select id="state" v-model="form.state" required class="form-input appearance-none">
-                <option value="" disabled>Select state...</option>
-                <option v-for="state in usStates" :key="state" :value="state">{{ state }}</option>
+              <label for="jurisdiction" class="block text-cream/80 text-sm font-medium mb-1.5">Jurisdiction</label>
+              <select id="jurisdiction" v-model="form.jurisdiction" required class="form-input appearance-none">
+                <option value="" disabled>Select jurisdiction...</option>
+                <option v-for="j in jurisdictions" :key="j" :value="j">{{ j }}</option>
               </select>
             </div>
             <div>
@@ -105,14 +105,14 @@
                 type="text"
                 required
                 class="form-input pr-10"
-                placeholder="e.g., I sell used cars, We do residential plumbing..."
+                placeholder="e.g., We build AI models for healthcare, We run a DeFi protocol..."
               />
               <Icon name="mdi:magnify" class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-cream/40" />
             </div>
           </div>
 
           <div>
-            <label class="block text-cream/80 text-sm font-medium mb-1.5">Insurance type</label>
+            <label class="block text-cream/80 text-sm font-medium mb-1.5">Coverage type</label>
             <button
               type="button"
               class="form-input text-left flex items-center justify-between"
@@ -155,9 +155,9 @@
               class="mt-1 w-4 h-4 rounded border-cream/30 text-accent focus:ring-accent bg-transparent"
             />
             <label for="consent" class="text-cream/60 text-xs leading-relaxed">
-              By checking this box and providing my mobile number, I consent to receive marketing and service notifications from Mokshya OS. Message frequency varies. Message and data rates may apply. Visit
-              <a href="#" class="text-accent hover:underline">https://harperinsure.com</a>
-              for help. Text STOP to unsubscribe.
+              By checking this box and providing my contact details, I consent to receive marketing and service notifications from Mokshya OS. Message frequency varies. Message and data rates may apply. Visit
+              <a href="https://mokshya.io" class="text-accent hover:underline">mokshya.io</a>
+              for help.
               <a href="#" class="text-accent hover:underline">Privacy Policy</a>
             </label>
           </div>
@@ -181,7 +181,7 @@
 </template>
 
 <script setup lang="ts">
-import { usStates, revenueRanges, insuranceTypes } from '~/data/states'
+import { jurisdictions, revenueRanges, insuranceTypes } from '~/data/states'
 
 const { form, isValid, submitted, submitting, submitForm, resetForm } = useFormData()
 const showInsuranceDropdown = ref(false)

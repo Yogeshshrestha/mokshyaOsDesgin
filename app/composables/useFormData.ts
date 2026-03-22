@@ -4,7 +4,7 @@ export function useFormData() {
     businessName: '',
     email: '',
     phone: '',
-    state: '',
+    jurisdiction: '',
     revenue: '',
     businessType: '',
     insuranceTypes: [] as string[],
@@ -20,7 +20,7 @@ export function useFormData() {
       form.businessName.trim() !== '' &&
       form.email.trim() !== '' &&
       form.phone.trim() !== '' &&
-      form.state !== '' &&
+      form.jurisdiction !== '' &&
       form.revenue !== '' &&
       form.businessType.trim() !== '' &&
       form.insuranceTypes.length > 0 &&
@@ -41,7 +41,7 @@ export function useFormData() {
     form.businessName = ''
     form.email = ''
     form.phone = ''
-    form.state = ''
+    form.jurisdiction = ''
     form.revenue = ''
     form.businessType = ''
     form.insuranceTypes = []

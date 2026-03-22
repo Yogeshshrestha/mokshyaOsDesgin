@@ -47,7 +47,7 @@
     <div class="mt-12 lg:mt-16 overflow-hidden">
       <img
         src="/images/landingimg.svg"
-        alt="Harper Insurance Graphic"
+        alt="Mokshya OS Graphic"
         class="w-full h-auto"
       />
     </div>

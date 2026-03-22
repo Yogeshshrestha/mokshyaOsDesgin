@@ -1,13 +1,9 @@
-export const usStates = [
-  'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado',
-  'Connecticut', 'District of Columbia', 'Delaware', 'Florida', 'Georgia',
-  'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-  'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota',
-  'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire',
-  'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-  'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina',
-  'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia',
-  'Washington', 'West Virginia', 'Wisconsin', 'Wyoming',
+export const jurisdictions = [
+  'United States',
+  'United Kingdom',
+  'UAE / GCC',
+  'Singapore / ASEAN',
+  'Other',
 ]
 
 export const revenueRanges = [
@@ -23,13 +19,14 @@ export const revenueRanges = [
 ]
 
 export const insuranceTypes = [
-  'General Liability',
-  'Property Insurance',
-  'Cyber Liability',
-  'Commercial Auto',
-  'Professional Liability/E&O',
-  'Inland Marine',
-  'Workers Compensation',
-  'Business Owners Policy',
-  'Umbrella/ Excess Liability',
+  'Cyber & Infrastructure Risk',
+  'Technology & AI Liability',
+  'Operational Resilience Risk',
+  'Digital Asset & DeFi Risk',
+  'Smart Contract Risk',
+  'Treasury & Liquidity Risk',
+  'Governance & Leadership Risk',
+  'Fraud, Identity & Internal Risk',
+  'AI & Autonomous Risk',
+  'Quantum Risk',
 ]

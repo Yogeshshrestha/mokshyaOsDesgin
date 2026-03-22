@@ -2,8 +2,8 @@
   <div v-if="!dismissed" class="bg-teal-light/90 text-cream py-2.5 px-4 relative z-50">
     <div class="flex items-center justify-center gap-3 text-sm">
       <p class="text-cream/90 font-medium">
-        We've raised $47 Million
-        <span class="hidden sm:inline">to build the future of commercial insurance.</span>
+        Mokshya OS has raised $12M
+        <span class="hidden sm:inline">to build the operating system for emerging risk insurance.</span>
       </p>
       <a
         href="#"

@@ -3,61 +3,81 @@
     <!-- Hero -->
     <section class="section-padding pt-16 pb-12 lg:pt-24 lg:pb-16">
       <div class="max-w-4xl">
-        <NuxtLink
-          to="/coverages"
-          class="inline-flex items-center gap-1.5 text-cream/60 text-sm font-medium hover:text-cream transition-colors mb-8"
-        >
-          <Icon name="mdi:arrow-left" class="w-4 h-4" />
-          All Coverages
-        </NuxtLink>
+        <!-- Top bar: back link + group chip -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+          <NuxtLink
+            to="/coverages"
+            class="inline-flex items-center gap-1.5 text-cream/60 text-sm font-medium hover:text-cream transition-colors"
+          >
+            <Icon name="mdi:arrow-left" class="w-4 h-4" />
+            All Coverages
+          </NuxtLink>
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-accent/90 bg-accent/15 border border-accent/25 rounded-full px-3 py-1.5">
+            {{ coverage.group }}
+          </span>
+        </div>
 
-        <div class="flex items-start gap-5 mb-6">
-          <div class="w-14 h-14 bg-teal-light rounded-2xl flex items-center justify-center shrink-0 overflow-hidden">
-            <img
-              v-if="coverage.image"
-              :src="coverage.image"
-              :alt="coverage.title"
-              class="w-full h-full object-contain"
-            />
-            <Icon
-              v-else
-              :name="coverage.icon"
-              class="w-7 h-7 text-cream"
-            />
+        <div class="flex items-start gap-5 mb-3">
+          <div class="w-14 h-14 bg-teal-light rounded-2xl flex items-center justify-center shrink-0">
+            <Icon :name="coverage.icon" class="w-7 h-7 text-cream" />
           </div>
           <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1]">
             {{ coverage.title }}
           </h1>
         </div>
 
+        <!-- Tagline -->
+        <p class="text-cream/60 text-lg italic mb-6 max-w-2xl">
+          {{ coverage.tagline }}
+        </p>
+
         <p class="text-cream/80 text-lg lg:text-xl leading-relaxed max-w-2xl mb-10">
           {{ coverage.description }}
         </p>
 
-        <div class="flex items-center gap-3">
+        <div class="flex flex-wrap items-center gap-3 mb-10">
           <a href="#quote" class="btn-coral text-base">
-            Get a quote now
+            {{ coverage.ctaLabel }}
           </a>
-          <a href="#quote" class="btn-icon bg-teal-dark text-cream rounded-full hover:bg-teal-dark/80">
-            <Icon name="mdi:arrow-top-right" class="w-5 h-5" />
+          <a href="mailto:hello@mokshya.io" class="inline-flex items-center gap-2 text-cream/70 text-sm font-medium hover:text-cream transition-colors border border-cream/20 rounded-full px-5 py-2.5">
+            <Icon name="mdi:message-text-outline" class="w-4 h-4" />
+            Talk to an advisor
           </a>
+        </div>
+
+        <!-- Chips at bottom of hero: availability + markets -->
+        <div class="pt-8 border-t border-white/10">
+          <p class="text-cream/50 text-xs font-semibold uppercase tracking-wider mb-3">Availability &amp; markets</p>
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span
+              class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wide rounded-full px-3 py-1.5"
+              :class="availabilityClasses"
+            >
+              <span class="w-2 h-2 rounded-full" :class="availabilityDotClass" />
+              {{ coverage.availability }}
+            </span>
+            <span class="text-cream/60 text-sm">{{ coverage.markets }}</span>
+          </div>
+          <p class="text-cream/45 text-xs max-w-xl leading-relaxed">
+            {{ coverage.availabilityNote }}
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Recommended coverage -->
+    <!-- What This Covers -->
     <section class="bg-cream section-padding py-16 lg:py-24">
       <div class="max-w-5xl mx-auto">
         <h2 class="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-teal-dark mb-3">
-          Recommended coverage
+          What this covers
         </h2>
         <p class="text-teal-dark/60 text-base lg:text-lg mb-10 max-w-2xl">
-          Based on the risks this coverage is built for, these are the outcomes we typically help protect.
+          Key risk areas and incident types protected under this coverage.
         </p>
 
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           <div
-            v-for="item in includeItems"
+            v-for="item in coverage.whatCovers"
             :key="item"
             class="bg-white rounded-2xl p-6 border border-teal-dark/5 hover:shadow-lg hover:border-accent/20 transition-all duration-300 group"
           >
@@ -70,7 +90,32 @@
       </div>
     </section>
 
-    <!-- Why Harper -->
+    <!-- Typical Buyers -->
+    <section class="bg-cream section-padding pb-16 lg:pb-24">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-teal-dark mb-3">
+          Typical buyers
+        </h2>
+        <p class="text-teal-dark/60 text-base lg:text-lg mb-10 max-w-2xl">
+          Companies and teams that typically need this type of coverage.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div
+            v-for="buyer in coverage.typicalBuyers"
+            :key="buyer"
+            class="flex items-start gap-4 bg-white rounded-2xl p-6 border border-teal-dark/5"
+          >
+            <div class="w-10 h-10 bg-teal-dark/5 rounded-xl flex items-center justify-center shrink-0">
+              <Icon name="mdi:account-outline" class="w-5 h-5 text-teal-dark" />
+            </div>
+            <p class="font-medium text-teal-dark leading-relaxed">{{ buyer }}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Mokshya -->
     <section class="bg-teal-light section-padding py-16 lg:py-24">
       <div class="max-w-5xl mx-auto">
         <h2 class="font-sans text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-10">
@@ -104,10 +149,10 @@
       </div>
     </section>
 
-    <!-- Related coverages -->
+    <!-- Related coverages (same group) -->
     <section class="bg-cream section-padding py-16 lg:py-20">
       <div class="max-w-5xl mx-auto">
-        <h2 class="font-sans text-xl font-bold text-teal-dark mb-6">Explore more coverages</h2>
+        <h2 class="font-sans text-xl font-bold text-teal-dark mb-6">Related coverages</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-14 gap-y-4">
           <NuxtLink
             v-for="c in relatedCoverages"
@@ -125,6 +170,15 @@
       </div>
     </section>
 
+    <!-- Disclaimer -->
+    <section class="bg-cream section-padding pb-10">
+      <div class="max-w-5xl mx-auto">
+        <p class="text-teal-dark/40 text-xs leading-relaxed">
+          Subject to policy terms, conditions, and market availability. Mokshya OS acts as a program manager and distribution platform — not a carrier.
+        </p>
+      </div>
+    </section>
+
     <!-- Quote Form -->
     <QuoteForm />
   </div>
@@ -139,7 +193,7 @@
 </template>
 
 <script setup lang="ts">
-import { coverages } from '~/data/coverages'
+import { coverages, coverageGroups } from '~/data/coverages'
 
 const route = useRoute()
 const id = route.params.id as string
@@ -151,73 +205,35 @@ if (!coverage) {
 }
 
 useHead({
-  title: `${coverage.title} - Harper Insurance`,
+  title: coverage.metaTitle,
+  meta: [
+    { name: 'description', content: coverage.metaDescription },
+  ],
 })
 
-const includeItemsMap: Record<string, string[]> = {
-  equipment: [
-    'Tool and equipment protection',
-    'Damage during service and storage',
-    'Coverage for equipment-related liabilities',
-  ],
-  'errors-and-omissions': [
-    'Mistakes and missed advice coverage',
-    'Claims linked to professional errors',
-    'Protection against negligence-related losses',
-  ],
-  'general-liability': [
-    'Bodily injury and property damage',
-    'Claims from everyday business risk',
-    'Coverage that helps you respond fast',
-  ],
-  'liquor-liability': [
-    'Alcohol-related incident liability',
-    'Claims tied to service and distribution',
-    'Premises support where applicable',
-  ],
-  'medical-malpractice': [
-    'Patient care errors and omissions',
-    'Professional negligence protection',
-    'Claims handling support',
-  ],
-  'product-liability': [
-    'Defective product claims',
-    'Distribution and retail liability',
-    'Financial protection for product-related losses',
-  ],
-  'professional-liability': [
-    'Professional negligence and errors',
-    'Client-facing advice protection',
-    'Coverage for financial loss claims',
-  ],
-  'surety-bonds': [
-    'Contract-related bond protection',
-    'Licensing and compliance support',
-    'Financial guarantee coverage',
-  ],
-  umbrella: [
-    'Extra liability above primary limits',
-    'High-exposure incident protection',
-    'Additional coverage when it matters most',
-  ],
-  'workers-compensation': [
-    'Employee injury-related coverage',
-    'Workplace claim support',
-    'Protection for required benefits',
-  ],
-}
+const availabilityClasses = computed(() => {
+  switch (coverage.availability) {
+    case 'Instant': return 'bg-green-500/20 text-green-300'
+    case 'Guided': return 'bg-blue-500/20 text-blue-300'
+    case 'Advisory': return 'bg-purple-500/20 text-purple-300'
+    default: return 'bg-white/10 text-cream/70'
+  }
+})
 
-const includeItems = computed(() => {
-  return includeItemsMap[id] ?? [
-    'Coverage for key business risks',
-    'Guidance to find the right limits',
-    'Support when claims come up',
-  ]
+const availabilityDotClass = computed(() => {
+  switch (coverage.availability) {
+    case 'Instant': return 'bg-green-400'
+    case 'Guided': return 'bg-blue-400'
+    case 'Advisory': return 'bg-purple-400'
+    default: return 'bg-cream/50'
+  }
 })
 
 const relatedCoverages = computed(() => {
-  const others = coverages.filter(c => c.id !== id)
-  return others.slice(0, 6)
+  const groupSlugs = Object.values(coverageGroups).find(slugs => slugs.includes(id))
+  if (!groupSlugs) return coverages.filter(c => c.id !== id).slice(0, 6)
+  const sameGroup = coverages.filter(c => groupSlugs.includes(c.id) && c.id !== id)
+  if (sameGroup.length >= 2) return sameGroup
+  return [...sameGroup, ...coverages.filter(c => c.id !== id && !groupSlugs.includes(c.id)).slice(0, 4 - sameGroup.length)]
 })
 </script>
-

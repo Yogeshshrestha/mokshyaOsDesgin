@@ -6,27 +6,30 @@
       </NuxtLink>
 
       <div class="hidden lg:flex items-center gap-6 ml-auto">
-        <!-- Desktop links (right aligned) -->
         <NuxtLink
           v-for="link in navLinks"
           :key="link.label"
           :to="link.to"
-          class="text-white font-semibold text-md hover:text-cream transition-colors"
+          class="relative text-white font-semibold text-md hover:text-cream transition-colors py-1"
+          :class="{ 'text-cream': isActive(link.to) }"
         >
           {{ link.label }}
+          <span
+            v-if="isActive(link.to)"
+            class="absolute left-0 right-0 -bottom-0.5 h-0.5 bg-accent rounded-full transition-all duration-150"
+          />
         </NuxtLink>
 
-        <!-- Phone + CTA -->
         <a
-          href="tel:2125550199"
+          href="mailto:hello@mokshya.io"
           class="flex items-center gap-2 text-white text-md font-medium hover:text-cream transition-colors"
         >
-          <Icon name="mdi:phone" class="w-4 h-4" />
-          (212) 555-0199
+          <Icon name="mdi:email-outline" class="w-4 h-4" />
+          hello@mokshya.io
         </a>
-        <a href="#quote" class="btn-teal text-md py-2.5 px-5">
+        <NuxtLink to="/coverages#quote" class="btn-teal text-md py-2.5 px-5">
           Get Quoted
-        </a>
+        </NuxtLink>
       </div>
 
       <button
@@ -48,6 +51,7 @@
           :key="link.label"
           :to="link.to"
           class="block text-white font-semibold text-lg py-2 hover:text-cream transition-colors"
+          :class="{ 'text-cream': isActive(link.to) }"
           @click="mobileOpen = false"
         >
           {{ link.label }}
@@ -55,18 +59,18 @@
         </NuxtLink>
 
         <div class="pt-4 border-t border-white/10 space-y-3">
-          <a href="tel:2125550199" class="flex items-center gap-2 text-white font-medium">
-            <Icon name="mdi:phone" class="w-5 h-5" />
-            (212) 555-0199
+          <a href="mailto:hello@mokshya.io" class="flex items-center gap-2 text-white font-medium">
+            <Icon name="mdi:email-outline" class="w-5 h-5" />
+            hello@mokshya.io
           </a>
-          <a
-            href="#quote"
+          <NuxtLink
+            to="/coverages#quote"
             class="btn-teal text-sm py-2.5 px-5 w-full text-center"
             @click="mobileOpen = false"
           >
             Get a Quote
             <Icon name="mdi:arrow-top-right" class="w-4 h-4" />
-          </a>
+          </NuxtLink>
         </div>
       </div>
     </Transition>
@@ -74,6 +78,7 @@
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
 const mobileOpen = ref(false)
 
 const navLinks = [
@@ -81,6 +86,12 @@ const navLinks = [
   { label: 'Industries We Serve', to: '/industries' },
   { label: 'Risk We Cover', to: '/coverages' },
 ]
+
+function isActive(to: string): boolean {
+  const path = route.path
+  if (to === '/') return path === '/'
+  return path.startsWith(to)
+}
 </script>
 
 <style scoped>
@@ -104,4 +115,3 @@ const navLinks = [
   max-height: 500px;
 }
 </style>
-

@@ -1,18 +1,10 @@
 <template>
   <footer class="bg-cream section-padding pt-16 pb-8">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-8 mb-12">
       <div>
         <h3 class="text-xs font-bold text-teal-dark uppercase tracking-widest mb-4">Company</h3>
         <ul class="space-y-2">
           <li><NuxtLink to="/" class="text-teal-dark/70 hover:text-accent text-sm transition-colors">Home</NuxtLink></li>
-          <li><a href="#" class="text-teal-dark/70 hover:text-accent text-sm transition-colors">News</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3 class="text-xs font-bold text-teal-dark uppercase tracking-widest mb-4">Blog</h3>
-        <ul class="space-y-2">
-          <li><a href="#" class="text-teal-dark/70 hover:text-accent text-sm transition-colors">Engineering</a></li>
-          <li><a href="#" class="text-teal-dark/70 hover:text-accent text-sm transition-colors">Insurance Insights</a></li>
         </ul>
       </div>
       <div>

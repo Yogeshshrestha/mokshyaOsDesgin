@@ -5,12 +5,12 @@
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div>
           <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-            Comprehensive coverage for <span class="text-accent">every risk</span>
+            Coverage areas for <span class="text-accent">emerging digital risk</span>
           </h1>
           <p class="text-cream/80 text-lg lg:text-xl leading-relaxed max-w-lg mb-8">
-            From general liability to specialized professional coverage, we offer the insurance solutions your business needs. Harper helps you understand, compare, and secure the right protection for your unique risks.
+            Our coverage spans the risk domains that are reshaping commercial insurance — cyber infrastructure, AI systems, digital assets, and evolving regulatory environments. Whether you're a SaaS company, a DeFi protocol, or a board navigating new governance expectations, Mokshya helps you identify, structure, and bind coverage that traditional policies weren't designed to address.
           </p>
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-3 mb-4">
             <a href="#quote" class="btn-coral text-base">
               Get a quote now
             </a>
@@ -18,6 +18,9 @@
               <Icon name="mdi:arrow-top-right" class="w-5 h-5" />
             </a>
           </div>
+          <p class="text-cream/60 text-sm italic max-w-lg">
+            From cyber incidents to AI failures and digital asset losses — insure what traditional policies miss.
+          </p>
         </div>
 
         <div class="hidden lg:block">
