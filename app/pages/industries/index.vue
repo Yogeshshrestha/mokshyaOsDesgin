@@ -49,10 +49,15 @@
 <script setup lang="ts">
 import { allIndustries as industries } from '~/data/allIndustries'
 
-useHead({
-  title: 'Industries We Serve | Mokshya OS',
-  meta: [
-    { name: 'description', content: 'Mokshya OS provides emerging risk insurance for fintech, Web3, AI, SaaS, healthcare technology, and enterprise — the sectors traditional insurers weren\'t built for.' },
-  ],
+const title = 'Industries We Serve | Mokshya OS'
+const description =
+  'Mokshya OS provides emerging risk insurance for fintech, Web3, AI, SaaS, healthcare technology, and enterprise — the sectors traditional insurers were not built for. Built for businesses traditional insurance does not fit.'
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  twitterCard: 'summary_large_image',
 })
 </script>

@@ -3,7 +3,7 @@
     <!-- Curved top transition from cream to teal-light -->
     <div class="relative">
       <svg viewBox="0 0 1440 120" class="w-full block" preserveAspectRatio="none">
-        <path d="M0 100 Q720 0 1440 100 L1440 120 L0 120 Z" fill="#177F75" />
+        <path class="fill-teal-light" d="M0 100 Q720 0 1440 100 L1440 120 L0 120 Z" />
       </svg>
     </div>
 

@@ -59,7 +59,15 @@
 <script setup lang="ts">
 import { coverages } from '~/data/coverages'
 
-useHead({
-  title: 'Risk We Cover - Mokshya OS',
+const title = 'Risk We Cover | Mokshya OS'
+const description =
+  'Coverage areas for emerging digital risk: cyber infrastructure, AI liability, digital assets & DeFi, smart contracts, treasury, governance, fraud, quantum, and more. Mokshya helps you bind coverage traditional policies were not designed to address.'
+
+useSeoMeta({
+  title,
+  description,
+  ogTitle: title,
+  ogDescription: description,
+  twitterCard: 'summary_large_image',
 })
 </script>

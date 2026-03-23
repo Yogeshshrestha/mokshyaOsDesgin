@@ -204,11 +204,12 @@ if (!coverage) {
   throw createError({ statusCode: 404, statusMessage: 'Coverage not found' })
 }
 
-useHead({
+useSeoMeta({
   title: coverage.metaTitle,
-  meta: [
-    { name: 'description', content: coverage.metaDescription },
-  ],
+  description: coverage.metaDescription,
+  ogTitle: coverage.metaTitle,
+  ogDescription: coverage.metaDescription,
+  twitterCard: 'summary_large_image',
 })
 
 const availabilityClasses = computed(() => {

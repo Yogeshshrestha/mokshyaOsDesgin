@@ -138,8 +138,14 @@ if (!industry) {
   throw createError({ statusCode: 404, statusMessage: 'Industry not found' })
 }
 
-useHead({
-  title: `${industry.title} | Mokshya OS`,
+const pageTitle = `${industry.title} | Mokshya OS`
+
+useSeoMeta({
+  title: pageTitle,
+  description: industry.metaDescription,
+  ogTitle: pageTitle,
+  ogDescription: industry.metaDescription,
+  twitterCard: 'summary_large_image',
 })
 
 const relatedIndustries = computed(() => {

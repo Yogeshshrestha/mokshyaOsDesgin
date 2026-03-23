@@ -8,9 +8,14 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Harper Insurance - Business insurance that\'s Smarter. Faster. Cheaper.',
+      title: 'Mokshya OS - Business insurance that\'s Smarter. Faster. Cheaper.',
       meta: [
-        { name: 'description', content: 'From trucking to tech, construction to consulting, we use data and deep market access to find you the right coverage at the right price.' },
+        {
+          name: 'description',
+          content:
+            'Mokshya OS is the operating system for emerging risk insurance. Cyber, AI, digital assets, DeFi, and governance coverage — smarter, faster placement for businesses traditional insurers were not built for.',
+        },
+        { property: 'og:type', content: 'website' },
       ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },

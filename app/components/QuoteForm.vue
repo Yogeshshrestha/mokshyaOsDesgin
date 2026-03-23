@@ -1,8 +1,8 @@
 <template>
   <section id="quote" class="relative">
     <svg viewBox="0 0 1440 100" class="w-full block -mb-1" preserveAspectRatio="none">
-      <path d="M0 0 L0 40 Q720 100 1440 40 L1440 0 Z" fill="#FAF7E9" />
-      <path d="M0 40 Q720 100 1440 40 L1440 100 L0 100 Z" fill="#0E665D" />
+      <path class="fill-cream" d="M0 0 L0 40 Q720 100 1440 40 L1440 0 Z" />
+      <path class="fill-teal" d="M0 40 Q720 100 1440 40 L1440 100 L0 100 Z" />
     </svg>
 
     <div class="bg-teal section-padding pb-20">
