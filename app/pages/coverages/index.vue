@@ -2,12 +2,15 @@
   <div>
     <!-- Hero -->
     <section class="section-padding pt-16 pb-12 lg:pt-24 lg:pb-16">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+      <div class="grid lg:grid-cols-[60%_40%] gap-12 lg:gap-20 items-center">
         <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-accent/80 mb-4">
+            Risks We Cover
+          </span>
           <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
             Coverage areas for <span class="text-accent">emerging digital risk</span>
           </h1>
-          <p class="text-cream/80 text-lg lg:text-xl leading-relaxed max-w-lg mb-8">
+          <p class="text-cream/80 text-lg lg:text-xl leading-relaxed max-w-2xl mb-8">
             Our coverage spans the risk domains that are reshaping commercial insurance — cyber infrastructure, AI systems, digital assets, and evolving regulatory environments. Whether you're a SaaS company, a DeFi protocol, or a board navigating new governance expectations, Mokshya helps you identify, structure, and bind coverage that traditional policies weren't designed to address.
           </p>
           <div class="flex items-center gap-3 mb-4">
@@ -18,16 +21,16 @@
               <Icon name="mdi:arrow-top-right" class="w-5 h-5" />
             </a>
           </div>
-          <p class="text-cream/60 text-sm italic max-w-lg">
+          <p class="text-cream/60 text-base italic max-w-2xl">
             From cyber incidents to AI failures and digital asset losses — insure what traditional policies miss.
           </p>
         </div>
 
-        <div class="hidden lg:block">
+        <div class="hidden lg:flex justify-end">
           <img
             src="/images/landingimg.svg"
             alt="Coverages illustration"
-            class="w-full h-auto"
+            class="w-full h-auto max-w-[560px]"
           />
         </div>
       </div>

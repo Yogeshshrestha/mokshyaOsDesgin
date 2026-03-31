@@ -24,5 +24,6 @@
 </template>
 
 <script setup lang="ts">
-const dismissed = ref(false)
+/** Closed by default — matches product preference; user can open via future “show banner” control if needed */
+const dismissed = ref(true)
 </script>

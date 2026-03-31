@@ -4,8 +4,8 @@
       <h2 class="font-sans text-3xl sm:text-4xl lg:text-5xl font-bold text-teal-dark mb-6">
         What we <span class="text-accent italic">offer</span>
       </h2>
-      <p class="text-teal-dark/70 text-base lg:text-lg leading-relaxed">
-        We lead with human expertise — AI just amplifies our abilities. By using tech to surface the right markets quickly, our team delivers smarter matches and faster turnaround.
+      <p class="text-teal-dark/70 text-base lg:text-lg font-medium leading-relaxed">
+      We lead with human expertise — AI just amplifies our abilities. By using tech to surface the right markets quickly, our team delivers smarter matches and faster turnaround.
       </p>
       <p class="text-teal-dark/80 font-medium mt-4">We can help you with:</p>
     </div>
@@ -15,14 +15,7 @@
     </div>
 
     <div class="text-center mt-12">
-      <div class="flex items-center justify-center gap-3">
-        <a href="#quote" class="btn-teal">
-          Get covered
-        </a>
-        <a href="#quote" class="btn-icon bg-teal-dark hover:bg-teal text-cream rounded-full">
-          <Icon name="mdi:arrow-top-right" class="w-5 h-5" />
-        </a>
-      </div>
+      <GetQuoteButton to="#quote" label="Get a Quote" />
     </div>
   </section>
 </template>

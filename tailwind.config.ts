@@ -56,6 +56,15 @@ export default {
           light: '#1A9488',
           dark: '#0E665D',
         },
+        /** Who we serve — audience card accents (Figma 32184:14899) */
+        audience: {
+          buyer: '#0E665D',
+          broker: '#2563EB',
+          underwriter: '#7C3AED',
+          cro: '#0D9488',
+          board: '#C2410C',
+          reinsurer: '#1E293B',
+        },
       },
       fontFamily: {
         sans: ['Manrope', 'system-ui', 'sans-serif'],

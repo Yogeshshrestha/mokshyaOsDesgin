@@ -1,5 +1,5 @@
 <template>
-  <section class="relative overflow-hidden bg-cream">
+  <section id="how-it-works" class="relative overflow-hidden bg-cream">
     <!-- Curved top transition from cream to teal-light -->
     <div class="relative">
       <svg viewBox="0 0 1440 120" class="w-full block" preserveAspectRatio="none">

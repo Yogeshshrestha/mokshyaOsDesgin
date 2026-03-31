@@ -2,23 +2,33 @@
   <div>
     <!-- Hero -->
     <section class="section-padding pt-16 pb-12 lg:pt-24 lg:pb-16">
-      <div class="max-w-3xl">
-        <span class="inline-block text-xs font-bold uppercase tracking-widest text-accent/80 mb-4">
-          Industries We Serve
-        </span>
-        <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
-          Built for the businesses traditional insurance <span class="text-accent">doesn't fit</span>
-        </h1>
-        <p class="text-cream/80 text-lg lg:text-xl leading-relaxed max-w-2xl mb-8">
-          Mokshya focuses on high-growth, technology-driven sectors where risk is complex, fast-moving, and often misunderstood by legacy insurers. We know your business model — and we know how to cover it.
-        </p>
-        <div class="flex items-center gap-3">
-          <NuxtLink to="/coverages#quote" class="btn-coral text-base">
-            Get a quote now
-          </NuxtLink>
-          <NuxtLink to="/coverages#quote" class="btn-icon bg-teal-dark text-cream rounded-full hover:bg-teal-dark/80">
-            <Icon name="mdi:arrow-top-right" class="w-5 h-5" />
-          </NuxtLink>
+      <div class="grid lg:grid-cols-[60%_40%] gap-12 lg:gap-20 items-center">
+        <div>
+          <span class="inline-block text-xs font-bold uppercase tracking-widest text-accent/80 mb-4">
+            Industries We Serve
+          </span>
+          <h1 class="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6">
+            Built for the businesses traditional insurance <span class="text-accent">doesn't fit</span>
+          </h1>
+          <p class="text-cream/80 text-lg lg:text-xl leading-relaxed max-w-2xl mb-8">
+            Mokshya focuses on high-growth, technology-driven sectors where risk is complex, fast-moving, and often misunderstood by legacy insurers. We know your business model — and we know how to cover it.
+          </p>
+          <div class="flex items-center gap-3">
+            <NuxtLink to="/coverages#quote" class="btn-coral text-base">
+              Get a quote now
+            </NuxtLink>
+            <NuxtLink to="/coverages#quote" class="btn-icon bg-teal-dark text-cream rounded-full hover:bg-teal-dark/80">
+              <Icon name="mdi:arrow-top-right" class="w-5 h-5" />
+            </NuxtLink>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex justify-end">
+          <img
+            src="/images/landingimg.svg"
+            alt="Industries illustration"
+            class="w-full h-auto max-w-[560px]"
+          />
         </div>
       </div>
     </section>
